@@ -1,6 +1,5 @@
 asgiref==3.6.0
 backports.zoneinfo==0.2.1
-certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
 Django==4.1.4
 numpy==1.24.0
 opencv-contrib-python==4.6.0.66
