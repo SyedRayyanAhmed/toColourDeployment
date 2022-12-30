@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Rayyan - Black And White to Colour</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+    .submit-button-allignment 
+    input[type=submit]{
+        margin: 0;
+        position: absolute;
+        top: 125%;
+        left: 27%;
+        border: 2px solid rgb(141, 141, 141);
+        background-color: white;
+        color: rgb(90, 90, 90);
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .default:hover 
+    input[type=submit]{
+        background: #e7e7e7;
+    }
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+    <h1>Black And White to Colour
+        <small>By - Syed Rayyan Ahmed</small><br>
+        Please Select a file to upload
+    </h1>
+    <form action="exe_toColour" method="POST" enctype="multipart/form-data">
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                {% csrf_token %}
+                <input type="file" id="imageUpload" name="image" accept=".png, .jpg, .jpeg" />
+                <label for="imageUpload"></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                </div>
+            </div>
+            <div class="submit-button-allignment default">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  {% load static %}
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
